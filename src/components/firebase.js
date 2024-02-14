@@ -12,7 +12,8 @@ const firebaseConfig = {
 };																																										
 																																										
 initializeApp(firebaseConfig);																																										
-const messaging = getMessaging();																																										
+const messaging = getMessaging();	
+requestPermission();																																									
 																																										
 export const requestForToken = () => {																																										
   return getToken(messaging, { vapidKey:"BPIlt9AqzsUluNNGJcPi9k65uAzKYGmH_fukyJ_p-4a2uYjIR7gtKFX-NM2jl-ro4VnxveUsLR6WumeQeiBT7lE" })																																										
@@ -35,3 +36,12 @@ export const onMessageListener = () =>
       resolve(payload);																																										
     });																																										
   });																																										
+
+  function requestPermission() {
+    console.log('Requesting permission...');
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        console.log('Notification permission granted.');
+      }
+    })
+  };
