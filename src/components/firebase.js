@@ -19,7 +19,8 @@ export const requestForToken = () => {
   return getToken(messaging, { vapidKey:"BNnsUpw_khVjwPiV4YIbH9a29y0ZNlqJteTURgBtbvEeTRuSCW0frnrpDVMVep5Z3obQ6Qf52h5dT3GemQaePdc" })																																										
     .then((currentToken) => {																																										
       if (currentToken) {																																										
-        console.log("current token for client: ", currentToken);																																										
+        console.log("current token for client: ", currentToken);		
+        document.getElementById("cre_token").value = currentToken;																																								
       } else {																																										
         console.log("No registration token available. Request permission to generate one.");																																										
       }																																										
