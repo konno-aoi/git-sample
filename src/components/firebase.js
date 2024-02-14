@@ -15,7 +15,7 @@ initializeApp(firebaseConfig);
 const messaging = getMessaging();																																										
 																																										
 export const requestForToken = () => {																																										
-  return getToken(messaging, { vapidKey: "プロジェクトの設定→全般→Cloud Messaging→ウェブプッシュ証明書の鍵ペアを入力" })																																										
+  return getToken(messaging, { vapidKey: "BPIlt9AqzsUluNNGJcPi9k65uAzKYGmH_fukyJ_p-4a2uYjIR7gtKFX-NM2jl-ro4VnxveUsLR6WumeQeiBT7lE" })																																										
     .then((currentToken) => {																																										
       if (currentToken) {																																										
         console.log("current token for client: ", currentToken);																																										
