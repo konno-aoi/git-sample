@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";																																										
-import { getMessaging, getToken, onMessage } from "firebase/messaging";		
-import axios from 'axios';																																								
+import { getMessaging, getToken, onMessage } from "firebase/messaging";																																							
 																																										
 const firebaseConfig = {
   apiKey: "AIzaSyDsbox3yocR2jPj5AsLT6hbQpEl5bp3MZE",
@@ -48,8 +47,7 @@ export const onMessageListener = () =>
     })
   };
 
-  const axios = require('axios');
-
+const axios = require('axios');		
 // ↓GitHubのアクセストークンを入力
 const accessToken = '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';
 
