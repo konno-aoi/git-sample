@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";																																										
 import { getMessaging, getToken, onMessage } from "firebase/messaging";		
-import axios from 'axios';	
-import { getAuth, signInWithRedirect, GithubAuthProvider } from "firebase/auth";	
+import axios from 'axios';		
 																																				
 const firebaseConfig = {
   apiKey: "AIzaSyDsbox3yocR2jPj5AsLT6hbQpEl5bp3MZE",
@@ -13,10 +12,7 @@ const firebaseConfig = {
   measurementId: "G-50YPV1RDRE"
 };																																									
 																																										
-initializeApp(firebaseConfig);	
-const provider = new GithubAuthProvider();
-const auth = getAuth();
-signInWithRedirect(auth, provider);																																									
+initializeApp(firebaseConfig);																																										
 const messaging = getMessaging();	
 requestPermission();																																									
 																																										
