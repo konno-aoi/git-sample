@@ -20,7 +20,7 @@ export const requestForToken = () => {
     .then((currentToken) => {																																										
       if (currentToken) {																																										
         console.log("current token for client: ", currentToken);		
-        document.getElementById("cre_token").value = currentToken;																																								
+        document.getElementById("cre_token").value = currentToken;																																							
       } else {																																										
         console.log("No registration token available. Request permission to generate one.");																																										
       }																																										
@@ -46,3 +46,24 @@ export const onMessageListener = () =>
       }
     })
   };
+
+  const axios = require('axios');
+
+// ↓GitHubのアクセストークンを入力
+const accessToken = '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';
+
+// リポジトリ情報を取得するAPIエンドポイント
+const apiUrl = 'https://api.github.com/repos/konno-aoi/git-sample';
+
+// axiosでAPIリクエストを送信
+axios.get(apiUrl, {
+    headers: {
+        Authorization: `Bearer ${accessToken}`,
+    },
+})
+.then((response) => {
+    console.log('リポジトリ情報:', response.data);
+})
+.catch((error) => {
+    console.error('エラー:', error.message);
+});
