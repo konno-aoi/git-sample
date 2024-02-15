@@ -51,23 +51,3 @@ export const onMessageListener = () =>
       }
     });
   }
-
-
-// ↓GitHubのアクセストークンを入力
-const accessToken = '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';
-
-// リポジトリ情報を取得するAPIエンドポイント
-const apiUrl = 'https://api.github.com/repos/konno-aoi/git-sample/';
-
-// axiosでAPIリクエストを送信
-axios.get(apiUrl, {
-    headers: {
-        Authorization: `Bearer ${accessToken}`,
-    },
-})
-.then((response) => {
-    console.log('リポジトリ情報:', response.data);
-})
-.catch((error) => {
-    console.error('エラー:', error.message);
-});
